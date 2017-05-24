@@ -1,0 +1,33 @@
+{
+  "name": "wifi-network",
+  "version": "0.0.0",
+  "description": "Wireless network control",
+  "license": "MIT",
+  "author": "Jonas Hermsmeier <jhermsmeier@gmail.com> (https://jhermsmeier.de)",
+  "keywords": [
+    "wifi",
+    "wlan",
+    "lan",
+    "network",
+    "scanner",
+    "wireless"
+  ],
+  "main": "lib/wlan.js",
+  "dependencies": {
+    "bindings": "^1.2.1"
+  },
+  "devDependencies": {},
+  "peerDependencies": {},
+  "optionalDependencies": {},
+  "homepage": "https://github.com/jhermsmeier/node-wifi-network",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jhermsmeier/node-wifi-network.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jhermsmeier/node-wifi-network/issues"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}

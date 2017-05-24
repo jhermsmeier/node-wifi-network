@@ -1,0 +1,9 @@
+.*
+*.md
+*.log
+
+build
+doc
+example
+src
+test
