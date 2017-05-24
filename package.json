@@ -37,7 +37,7 @@
     "configure": "node-gyp configure",
     "build": "node-gyp build",
     "rebuild": "node-gyp rebuild",
-    "prebuild": "prebuild --all --strip --verbose",
+    "prebuild-local": "prebuild --all --strip --verbose",
     "prebuild-release": "prebuild --all --strip --verbose -u $GITHUB_TOKEN",
     "install": "prebuild-install || node-gyp rebuild",
     "test": "mocha"
