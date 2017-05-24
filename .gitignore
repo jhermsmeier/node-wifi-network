@@ -3,4 +3,6 @@
 *.log
 
 build
+prebuild
+prebuilds
 node_modules

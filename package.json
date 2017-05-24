@@ -15,10 +15,11 @@
   "main": "lib/wlan.js",
   "dependencies": {
     "bindings": "^1.2.1",
-    "nan": "^2.6.2"
+    "nan": "^2.6.2",
+    "prebuild-install": "^2.1.2"
   },
   "devDependencies": {
-    "node-gyp": "^3.6.1"
+    "prebuild": "^6.1.0"
   },
   "peerDependencies": {},
   "optionalDependencies": {},
@@ -35,7 +36,9 @@
     "configure": "node-gyp configure",
     "build": "node-gyp build",
     "rebuild": "node-gyp rebuild",
-    "install": "node-gyp rebuild",
+    "prebuild": "prebuild --all --strip --verbose",
+    "prebuild-release": "prebuild --all --strip --verbose -u $GITHUB_TOKEN",
+    "install": "prebuild-install || node-gyp rebuild",
     "test": "echo \"Error: no test specified\" && exit 1"
   }
 }
