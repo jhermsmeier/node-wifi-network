@@ -1,7 +1,7 @@
 {
   "name": "wifi-network",
   "version": "0.0.0",
-  "description": "Wireless network control",
+  "description": "Cross-platform wireless network control",
   "license": "MIT",
   "author": "Jonas Hermsmeier <jhermsmeier@gmail.com> (https://jhermsmeier.de)",
   "keywords": [
