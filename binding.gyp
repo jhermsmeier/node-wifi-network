@@ -1,12 +1,12 @@
 {
   "targets": [
     {
-      "target_name": "wlan",
+      "target_name": "wifi",
       "include_dirs" : [
         "<!(node -e \"require('nan')\")"
       ],
       "sources": [
-        "src/wlan.cpp"
+        "src/wifi.cpp"
       ],
       "conditions": [
         [ 'OS=="mac"', {
