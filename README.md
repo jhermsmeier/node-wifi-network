@@ -17,3 +17,28 @@ $ npm install --save wifi-network
 ```js
 var wifi = require( 'wifi-network' )
 ```
+
+### Scan for available networks
+
+```js
+wifi.scan( function( error, networks ) {
+  console.log( error || networks )
+})
+```
+
+```js
+[
+  {
+    ssid: 'Vodafone Hotspot',
+    bssid: 'a6:31:c4:f2:2d:ca',
+    countryCode: 'DE',
+    beaconInterval: 100,
+    noise: -87,
+    rssi: -48,
+    channelNumber: 1,
+    channelBand: 1,
+    channelWidth: 1
+  },
+  ...
+]
+```
