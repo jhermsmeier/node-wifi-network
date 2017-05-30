@@ -33,12 +33,17 @@ wifi.scan( function( error, networks ) {
     bssid: 'a6:31:c4:f2:2d:ca',
     countryCode: 'DE',
     beaconInterval: 100,
-    noise: -87,
-    rssi: -48,
+    noise: -88,
+    rssi: -52,
     channelNumber: 1,
-    channelBand: 1,
-    channelWidth: 1
+    channelBand: 2,
+    channelWidth: 20,
   },
   ...
 ]
 ```
+
+## References
+
+- [Apple / CoreWLAN](https://developer.apple.com/reference/corewlan)
+- [Microsoft / Native Wifi API](https://msdn.microsoft.com/en-us/library/ms706556(VS.85).aspx)
