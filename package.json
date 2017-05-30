@@ -12,7 +12,7 @@
     "scanner",
     "wireless"
   ],
-  "main": "lib/wlan.js",
+  "main": "lib/wifi.js",
   "dependencies": {
     "bindings": "^1.2.1",
     "nan": "^2.6.2",

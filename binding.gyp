@@ -6,7 +6,9 @@
         "<!(node -e \"require('nan')\")"
       ],
       "sources": [
-        "src/wifi.cpp"
+        "src/wifi.cpp",
+        "src/wifi-scan.cpp",
+        "src/wifi-network.cpp"
       ],
       "conditions": [
         [ 'OS=="mac"', {
