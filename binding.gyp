@@ -8,7 +8,8 @@
       "sources": [
         "src/wifi.cpp",
         "src/wifi-scan.cpp",
-        "src/wifi-network.cpp"
+        "src/wifi-network.cpp",
+        "src/wifi-interface.cpp"
       ],
       "conditions": [
         [ 'OS=="mac"', {
@@ -22,7 +23,13 @@
           }
         }],
         [ 'OS=="win"', {
-          "sources": []
+          "sources": [
+            "src/windows/nativewifi.cpp"
+          ],
+          "libraries": [
+            "-lwlanapi.lib",
+            "-lole32.lib"
+          ]
         }],
         [ 'OS=="linux"', {
           "sources": []

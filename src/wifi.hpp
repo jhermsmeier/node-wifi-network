@@ -5,6 +5,13 @@
 #include <string>
 #include <vector>
 
+struct WifiInterface {
+  GUID guid;
+  std::string guid_string;
+  std::string description;
+  std::string state;
+};
+
 struct WifiNetwork {
   std::string ssid;
   std::string bssid;
@@ -17,10 +24,18 @@ struct WifiNetwork {
   int64_t channel_width;
 };
 
+struct WifiError {
+  int code;
+  std::string message;
+};
+
 std::vector<WifiNetwork> wifi_scan_networks();
+std::vector<WifiInterface> wifi_list_interfaces();
 v8::Local<v8::Object> pack_wifi_network( const WifiNetwork *instance );
+v8::Local<v8::Object> pack_wifi_interface( const WifiInterface *instance );
 // WifiNetwork unpack_wifi_network( const v8::Local<v8::Object> *object );
 
 NAN_METHOD( scan );
+NAN_METHOD( listInterfaces );
 
 #endif // SRC_WIFI_HPP_

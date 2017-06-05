@@ -27,7 +27,7 @@ class WlanScanWorker : public Nan::AsyncWorker {
     }
 
     v8::Local<v8::Value> argv[] = { Nan::Null(), network_list };
-    callback->Call( 2, argv );
+    callback->Call( 2, argv, async_resource );
 
   }
 
@@ -37,7 +37,6 @@ class WlanScanWorker : public Nan::AsyncWorker {
 
 };
 
-
 NAN_METHOD(scan) {
 
   if( !info[0]->IsFunction() ) {
@@ -46,6 +45,55 @@ NAN_METHOD(scan) {
 
   Nan::Callback *callback = new Nan::Callback( info[0].As<v8::Function>() );
   Nan::AsyncQueueWorker( new WlanScanWorker( callback ) );
+
+  info.GetReturnValue().SetUndefined();
+
+}
+
+class WlanInterfaceListWorker : public Nan::AsyncWorker {
+
+ public:
+
+  explicit WlanInterfaceListWorker( Nan::Callback *callback )
+    : Nan::AsyncWorker( callback ), netInterfaces() {}
+
+  ~WlanInterfaceListWorker() {}
+
+  void Execute() {
+    netInterfaces = wifi_list_interfaces();
+  }
+
+  void HandleOKCallback() {
+
+    Nan::HandleScope scope;
+    v8::Local<v8::Object> interface_list = Nan::New<v8::Array>();
+
+    uint32_t i;
+    uint32_t size = netInterfaces.size();
+
+    for( i = 0; i < size; i++ ) {
+      Nan::Set( interface_list, i, pack_wifi_interface( &netInterfaces[i] ) );
+    }
+
+    v8::Local<v8::Value> argv[] = { Nan::Null(), interface_list };
+    callback->Call( 2, argv, async_resource );
+
+  }
+
+ private:
+
+  std::vector<WifiInterface> netInterfaces;
+
+};
+
+NAN_METHOD(listInterfaces) {
+
+  if( !info[0]->IsFunction() ) {
+    return Nan::ThrowTypeError( "Callback must be a function" );
+  }
+
+  Nan::Callback *callback = new Nan::Callback( info[0].As<v8::Function>() );
+  Nan::AsyncQueueWorker( new WlanInterfaceListWorker( callback ) );
 
   info.GetReturnValue().SetUndefined();
 
