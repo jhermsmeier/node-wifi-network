@@ -8,6 +8,12 @@ script:
 os:
   - linux
   - osx
+before_install:
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then
+      pip install --user cpplint;
+    else
+      pip install cpplint;
+    fi
 compiler: clang-4.0
 env:
   global:

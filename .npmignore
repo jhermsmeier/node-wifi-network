@@ -1,6 +1,7 @@
 .*
 *.md
 *.log
+*.cfg
 
 build
 doc

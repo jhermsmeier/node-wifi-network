@@ -40,6 +40,7 @@
     "prebuild-local": "prebuild --all --strip --verbose",
     "prebuild-release": "prebuild --all --strip --verbose -u $GITHUB_TOKEN",
     "install": "prebuild-install || node-gyp rebuild",
-    "test": "mocha"
+    "lint": "cpplint --recursive src",
+    "test": "npm run lint && mocha"
   }
 }

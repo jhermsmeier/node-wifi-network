@@ -50,6 +50,16 @@ wifi.scan( function( error, networks ) {
 ]
 ```
 
+## Contributing
+
+### Auxiliary Dependencies
+
+- [cpplint](https://github.com/cpplint/cpplint)
+
+```
+$ pip install cpplint
+```
+
 ## References
 
 - [Apple / CoreWLAN](https://developer.apple.com/reference/corewlan)
