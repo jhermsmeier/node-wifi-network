@@ -1,18 +1,20 @@
-#ifndef __SRC_WLAN_H
-#define __SRC_WLAN_H
+#ifndef SRC_WIFI_HPP_
+#define SRC_WIFI_HPP_
 
 #include <nan.h>
+#include <string>
+#include <vector>
 
 struct WifiNetwork {
   std::string ssid;
   std::string bssid;
   std::string country_code;
-  long beacon_interval;
-  long noise;
-  long rssi;
-  long channel_number;
-  long channel_band;
-  long channel_width;
+  int64 beacon_interval;
+  int64 noise;
+  int64 rssi;
+  int64 channel_number;
+  int64 channel_band;
+  int64 channel_width;
 };
 
 std::vector<WifiNetwork> wifi_scan_networks();
@@ -21,4 +23,4 @@ v8::Local<v8::Object> pack_wifi_network( const WifiNetwork *instance );
 
 NAN_METHOD( scan );
 
-#endif // __SRC_WLAN_H
+#endif // SRC_WIFI_HPP_

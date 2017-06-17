@@ -5,7 +5,7 @@ class WlanScanWorker : public Nan::AsyncWorker {
 
  public:
 
-  WlanScanWorker( Nan::Callback *callback )
+  explicit WlanScanWorker( Nan::Callback *callback )
     : Nan::AsyncWorker( callback ), networks() {}
 
   ~WlanScanWorker() {}
