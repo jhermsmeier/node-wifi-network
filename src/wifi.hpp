@@ -9,12 +9,12 @@ struct WifiNetwork {
   std::string ssid;
   std::string bssid;
   std::string country_code;
-  int64 beacon_interval;
-  int64 noise;
-  int64 rssi;
-  int64 channel_number;
-  int64 channel_band;
-  int64 channel_width;
+  int64_t beacon_interval;
+  int64_t noise;
+  int64_t rssi;
+  int64_t channel_number;
+  int64_t channel_band;
+  int64_t channel_width;
 };
 
 std::vector<WifiNetwork> wifi_scan_networks();
