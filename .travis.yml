@@ -14,7 +14,7 @@ before_install:
     else
       pip install cpplint;
     fi
-compiler: clang-4.0
+compiler: clang-5.0
 env:
   global:
     - CCACHE_TEMPDIR=/tmp/.ccache-temp
