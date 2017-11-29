@@ -29,3 +29,10 @@ addons:
       - libstdc++-5-dev
 notifications:
   email: false
+deploy:
+  skip_cleanup: true
+  provider: script
+  script: ./scripts/prebuild-release.sh
+  on:
+    tags: true
+    branch: master
