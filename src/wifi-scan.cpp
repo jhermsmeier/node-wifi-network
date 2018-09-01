@@ -27,7 +27,7 @@ class WlanScanWorker : public Nan::AsyncWorker {
     }
 
     v8::Local<v8::Value> argv[] = { Nan::Null(), network_list };
-    callback->Call( 2, argv );
+    callback->Call( 2, argv, async_resource );
 
   }
 
