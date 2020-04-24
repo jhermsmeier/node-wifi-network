@@ -15,7 +15,7 @@
   "main": "lib/wifi.js",
   "dependencies": {
     "bindings": "^1.5.0",
-    "nan": "^2.14.0",
+    "nan": "^2.14.1",
     "prebuild-install": "^5.3.3"
   },
   "devDependencies": {
