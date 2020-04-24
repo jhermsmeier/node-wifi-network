@@ -1,8 +1,8 @@
 language: node_js
 node_js:
+  - "14"
   - "12"
   - "10"
-  - "8"
 script:
   - npm test
 os:
@@ -14,18 +14,6 @@ before_install:
     else
       pip install cpplint;
     fi
-compiler: clang-5.0
-env:
-  global:
-    - CCACHE_TEMPDIR=/tmp/.ccache-temp
-    - CCACHE_COMPRESS=1
-    - CC="clang"
-    - CXX="clang++"
-addons:
-  apt:
-    sources:
-      - ubuntu-toolchain-r-test
-    packages:
-      - libstdc++-5-dev
 notifications:
   email: false
+
