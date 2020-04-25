@@ -1,7 +1,11 @@
 #include "wifi.hpp"
 
-NAN_MODULE_INIT(InitAll) {
-  NAN_EXPORT(target, scan);
+NAN_MODULE_INIT( Init ) {
+  NAN_EXPORT( target, scan );
 }
 
-NODE_MODULE(Wlan, InitAll);
+#if NODE_MAJOR_VERSION >= 10
+  NAN_MODULE_WORKER_ENABLED( Wlan, Init );
+#else
+  NODE_MODULE( Wlan, Init );
+#endif
