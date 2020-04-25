@@ -44,7 +44,7 @@ NAN_METHOD(scan) {
     return Nan::ThrowTypeError( "Callback must be a function" );
   }
 
-  Nan::Callback *callback = new Nan::Callback( info[0].As<v8::Function>() );
+  Nan::Callback *callback = new Nan::Callback( Nan::To<v8::Function>(info[0]).ToLocalChecked() );
   Nan::AsyncQueueWorker( new WlanScanWorker( callback ) );
 
   info.GetReturnValue().SetUndefined();
