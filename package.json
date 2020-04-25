@@ -35,7 +35,7 @@
   "gypfile": true,
   "scripts": {
     "configure": "node-gyp configure",
-    "build": "node-gyp build",
+    "build": "node-gyp rebuild",
     "rebuild": "node-gyp rebuild",
     "prebuild-local": "prebuild --all --strip --verbose",
     "prebuild-release": "prebuild --all --strip --verbose -u $GITHUB_TOKEN",
