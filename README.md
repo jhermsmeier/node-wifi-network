@@ -3,7 +3,6 @@
 [![stability](https://img.shields.io/badge/stability-experimental-orange.svg?style=flat-square)](https://nodejs.org/api/documentation.html#documentation_stability_index)
 [![npm license](https://img.shields.io/npm/l/wifi-network.svg?style=flat-square)](https://npmjs.com/package/wifi-network)
 [![npm downloads](https://img.shields.io/npm/dm/wifi-network.svg?style=flat-square)](https://npmjs.com/package/wifi-network)
-[![build status](https://img.shields.io/travis/jhermsmeier/node-wifi-network/master.svg?style=flat-square)](https://travis-ci.org/jhermsmeier/node-wifi-network)
 
 Cross-platform wireless network control
 
