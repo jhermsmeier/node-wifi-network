@@ -14,16 +14,13 @@
   ],
   "main": "lib/wifi.js",
   "dependencies": {
-    "bindings": "^1.5.0",
-    "nan": "^2.14.1",
-    "prebuild-install": "^5.3.3"
+    "bindings": "1.5.0",
+    "nan": "2.18.0",
+    "prebuild-install": "7.1.1"
   },
   "devDependencies": {
-    "mocha": "^5.2.0",
-    "prebuild": "^10.0.0"
+    "prebuild": "12.1.0"
   },
-  "peerDependencies": {},
-  "optionalDependencies": {},
   "homepage": "https://github.com/jhermsmeier/node-wifi-network",
   "repository": {
     "type": "git",
